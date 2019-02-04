@@ -53,12 +53,14 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import Nav from './Nav'
 import Header from './Header'
 import Island from './Island'
+import Region from './Region'
 
 const App = () => {
   return (
     <Router>
       <div>
-        <Route path='/' component={Island} />
+        <Route exact path='/' component={Island} />
+        <Route path='/:island' component={Region}/>
       </div>
      
     </Router>
