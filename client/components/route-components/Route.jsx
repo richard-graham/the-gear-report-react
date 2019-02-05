@@ -23,15 +23,14 @@ const Route = ({match}) => {
         }
     })
 
-    const resItem = routeArr[0]
-
     return (
         <div className="routeWrapper">
-            <h1>{resItem.wall_name}</h1>
+            <h1>{wallObj.name}</h1>
             <br />
-            <p>Access</p>
-            <p>{resItem.access}</p>
-            
+            <p><strong>Access</strong></p>
+            <p>{wallObj.access}</p>
+            <p>Altitude: {wallObj.altitude}</p>
+            <p>Walk Time: {wallObj.walk_time}</p>
             
             {routeArr.map((item, i) => 
             <div>
