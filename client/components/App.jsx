@@ -58,6 +58,7 @@ import Area from './route-components/Area'
 import Crag from './route-components/Crag'
 import Wall from './route-components/Wall'
 import Routes from './route-components/Route'
+import Climb from './route-components/Climb'
 
 const App = () => {
   return (
@@ -69,6 +70,8 @@ const App = () => {
         <Route exact path='/:island/:region/:area' component={Crag}/>
         <Route exact path='/:island/:region/:area/:crag' component={Wall}/>
         <Route exact path='/:island/:region/:area/:crag/:wall' component={Routes}/>
+        <Route exact path='/:island/:region/:area/:crag/:wall/:climb' component={Climb}/>
+
       </div>
      
     </Router>
