@@ -57,6 +57,7 @@ import Region from './route-components/Region'
 import Area from './route-components/Area'
 import Crag from './route-components/Crag'
 import Wall from './route-components/Wall'
+import Routes from './route-components/Route'
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
         <Route exact path='/:island/:region' component={Area}/>
         <Route exact path='/:island/:region/:area' component={Crag}/>
         <Route exact path='/:island/:region/:area/:crag' component={Wall}/>
+        <Route exact path='/:island/:region/:area/:crag/:wall' component={Routes}/>
       </div>
      
     </Router>
