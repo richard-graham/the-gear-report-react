@@ -24,8 +24,6 @@ const Wall = ({match}) => {
         }
     })
 
-    console.log(cragObj)
-
     return (
         <div className="wallWrapper">
             <h1>{cragObj.name}</h1>
@@ -37,7 +35,7 @@ const Wall = ({match}) => {
             <p>Accommodation: {cragObj.accommodation}</p>
             <br />
             <p><strong>Walls</strong></p>
-            {resArr.map((item, i) => <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.name}`}>{item.name}</Link></p>)}
+            {resArr.map((item, i) => <h4 key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.name}`}>{item.name}</Link></h4>)}
         </div>
     )
 }

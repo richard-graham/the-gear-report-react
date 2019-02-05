@@ -33,13 +33,13 @@ const Route = ({match}) => {
             <p>Walk Time: {wallObj.walk_time}</p>
             
             {routeArr.map((item, i) => 
-            <div>
-            <h4 key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.wall_name}/${item.name}`}>{item.name}</Link></h4>
-            <ul>
-                <li>Grade: {item.grade}</li>
-                <li>Length: {item.length}</li>
-                <li>Bolts: {item.bolts}</li>
-            </ul>
+            <div key={i}>
+                <h4><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.wall_name}/${item.name}`}>{item.name}</Link></h4>
+                <ul>
+                    <li>Grade: {item.grade}</li>
+                    <li>Length: {item.length}</li>
+                    <li>Bolts: {item.bolts}</li>
+                </ul>
             </div>
             )}
            

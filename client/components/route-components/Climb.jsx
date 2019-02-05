@@ -12,15 +12,13 @@ const Climb = ({match}) => {
         if (item.name === climb) {
             resArr.push(item)
         }})
-        console.log(resArr)
-        console.log();
-        console.log(climb)
+        
     return (
         <div className="routeWrapper">
             <h1>{resArr[0].name}</h1>
             
             {resArr.map((item, i) => 
-            <div>
+            <div key={i}>
                 <br />
                 <p>Grade: {item.grade}</p>
                 <p>Height: {item.length}</p>
