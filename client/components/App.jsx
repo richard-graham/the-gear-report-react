@@ -50,8 +50,6 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
-import Nav from './Nav'
-import Header from './Header'
 import Island from './route-components/Island'
 import Region from './route-components/Region'
 import Area from './route-components/Area'
@@ -71,9 +69,7 @@ const App = () => {
         <Route exact path='/:island/:region/:area/:crag' component={Wall}/>
         <Route exact path='/:island/:region/:area/:crag/:wall' component={Routes}/>
         <Route exact path='/:island/:region/:area/:crag/:wall/:climb' component={Climb}/>
-
       </div>
-     
     </Router>
   )
 }

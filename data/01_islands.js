@@ -1,6 +1,6 @@
 export default [
-    {name: 'North'},
-    {name: 'South'},
-  ]
+    {name: "North"},
+    {name: "South"},
+]
 
  
