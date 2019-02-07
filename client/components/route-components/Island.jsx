@@ -1,13 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import islandData from '../../../data/01_islands'
-
 import {getIsland} from '../../api/island_api'
-
-
-const islandList = Object.values(islandData)
-
 
 class Island extends React.Component {
     constructor(props){
