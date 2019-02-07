@@ -32,7 +32,8 @@ class Region extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            regionData: [{id: 1, name: "North"}]
+            regionData: [{id: 1, name: "North"}],
+            island: this.props.match.params.island
         }
     }
 
@@ -48,10 +49,12 @@ class Region extends React.Component {
     }
 
     render(){
+        console.log('state', this.state)
+        console.log('props', this.props.match.params.island)
         return (
             <div className="regionWrapper">
                 <h1>region!</h1>
-                {this.state.regionData && this.state.regionData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p>)}
+                {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }
