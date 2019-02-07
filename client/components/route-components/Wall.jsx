@@ -9,6 +9,7 @@ const cragList = Object.values(cragData)
 
 
 const Wall = ({match}) => {
+    console.log(match)
     const {crag} = match.params
     const resArr = [];
     let cragObj = null;

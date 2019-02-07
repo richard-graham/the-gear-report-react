@@ -8,21 +8,21 @@ import {getIsland} from '../../api/island_api'
 
 const islandList = Object.values(islandData)
 
-// const Island = () => {
-class Island extends React.Component {
 
+class Island extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            islandData: ["got this far"]
+            islandData: []
         }
     }
 
     componentDidMount(){
         getIsland()
         .then((res)=>{
+            console.log('component res', res)
             this.setState({
-                islandData: [res.data]
+                islandData: res
             })
         })
     }
@@ -30,9 +30,8 @@ class Island extends React.Component {
     render(){
         return (
             <div className="islandWrapper">
-                <p>{this.state.islandData}</p>
                 <h1>Island!</h1>
-                {islandList.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p>)}
+                {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p>)}
             </div>
         )
     }
