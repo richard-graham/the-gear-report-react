@@ -58,6 +58,8 @@ import Wall from './route-components/Wall'
 import Routes from './route-components/Route'
 import Climb from './route-components/Climb'
 
+console.log('app.jsx')
+
 const App = () => {
   return (
     <Router>

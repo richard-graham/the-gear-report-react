@@ -5,7 +5,7 @@ var db = require('../db')
 router.get('', function(req, res) {
     db.getIslands(req.params.id)
     .then(island => {
-    console.log('hi', island[0])
+    console.log('island routes')
     res.render('islands', {island: island})
     })
 })

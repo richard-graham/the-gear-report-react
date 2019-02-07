@@ -27,6 +27,14 @@ server.get("/API/region",(req,res)=>{
     })
 })
 
+server.get("/API/areas",(req,res)=>{
+    
+    areaDb.getAreas()
+    .then((dbResponse) => {
+        res.send(dbResponse)
+    })
+})
+
 module.exports = server
 
 

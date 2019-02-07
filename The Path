@@ -1,0 +1,2 @@
+Server calls getIslands() in ./db/islands any pushes data to "/API/island". Data is then captured by island_api.js. The island component then 
+imports the data and runs it on componentDidMount(). Data is saved to state and rendered to the page.

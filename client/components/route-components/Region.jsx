@@ -41,7 +41,6 @@ class Region extends React.Component {
         console.log(getRegion());
         getRegion()
         .then((res)=>{
-            console.log('component res', res)
             this.setState({
                 regionData: res
             })
@@ -49,8 +48,6 @@ class Region extends React.Component {
     }
 
     render(){
-        console.log('state', this.state)
-        console.log('props', this.props.match.params.island)
         return (
             <div className="regionWrapper">
                 <h1>region!</h1>

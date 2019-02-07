@@ -14,7 +14,7 @@ class Island extends React.Component {
     componentDidMount(){
         getIsland()
         .then((res)=>{
-            console.log('component res', res)
+            console.log('island component')
             this.setState({
                 islandData: res
             })
