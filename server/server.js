@@ -6,6 +6,7 @@ const server = express()
 
 const islandDb = require('./db/islands')
 const regionDb = require('./db/regions')
+const areaDb = require('./db/areas')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
@@ -27,7 +28,7 @@ server.get("/API/region",(req,res)=>{
     })
 })
 
-server.get("/API/areas",(req,res)=>{
+server.get("/API/area",(req,res)=>{
     
     areaDb.getAreas()
     .then((dbResponse) => {

@@ -34,6 +34,8 @@ class Area extends React.Component {
         super(props)
         this.state = {
             areaData: [{id: 1, name: "North"}],
+            island: this.props.match.params.island,
+            region: this.props.match.params.region
         }
     }
 
@@ -48,11 +50,13 @@ class Area extends React.Component {
     }
 
     render(){
+        console.log(this.state)
         return (
-            <div className="areaWrapper">
-                <h1>Area!</h1>
-                {this.state.areaData && this.state.areaData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}/${item.region_name}`}>{item.name}</Link></p> : '')}
-            </div>
+            null
+            // <div className="areaWrapper">
+            //     <h1>Area!</h1>
+            //     {this.state.areaData && this.state.areaData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}/${item.region_name}`}>{item.name}</Link></p> : '')}
+            // </div>
         )
     }
 }

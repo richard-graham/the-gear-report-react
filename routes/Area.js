@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db')
 
-router.get('/:id', function(req, res) {
-    db.getAreas(req.params.id)
+router.get('', function(req, res) {
+    console.log('area id', req.params.id)
+    db.getAreas()
     .then(area => {
     // res.render('area', {area: area})
-    res.json(area)
+    res.render('areas', {area: area})
     console.log(area);
     })
 })
