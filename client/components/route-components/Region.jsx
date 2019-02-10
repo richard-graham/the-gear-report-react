@@ -25,7 +25,7 @@ class Region extends React.Component {
         const h1obj = this.state.regionData.find(item => item.island_name === this.state.island)
         return (
             <div className="regionWrapper">
-                <h1>{h1obj && h1obj.island_name}</h1>
+                <h1>{h1obj && h1obj.island_name} Island</h1>
                 {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.island_name}/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )

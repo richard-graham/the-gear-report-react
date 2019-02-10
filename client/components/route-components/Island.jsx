@@ -23,8 +23,8 @@ class Island extends React.Component {
     render(){
         return (
             <div className="islandWrapper">
-                <h1>Island!</h1>
-                {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p>)}
+                <h1>New Zealand</h1>
+                {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name} Island</Link></p>)}
             </div>
         )
     }

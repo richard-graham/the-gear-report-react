@@ -7,6 +7,7 @@ const server = express()
 const islandDb = require('./db/islands')
 const regionDb = require('./db/regions')
 const areaDb = require('./db/areas')
+const cragDb = require('./db/crags')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
@@ -31,6 +32,14 @@ server.get("/API/region",(req,res)=>{
 server.get("/API/area",(req,res)=>{
     
     areaDb.getAreas()
+    .then((dbResponse) => {
+        res.send(dbResponse)
+    })
+})
+
+server.get("/API/crag",(req,res)=>{
+    
+    cragDb.getCrags()
     .then((dbResponse) => {
         res.send(dbResponse)
     })

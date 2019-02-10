@@ -1,25 +1,38 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import cragData from '../../../data/04_crags'
+import {getCrag} from '../../api/crag_api'
 
-const cragList = Object.values(cragData)
+class Crag extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            cragData: [{id: 1, name: "North"}],
+            island: this.props.match.params.island,
+            region: this.props.match.params.region,
+            area: this.props.match.params.area
+        }
+    }
 
-const Crag = ({match}) => {
-    const {area} = match.params
-    const resArr = [];
-    
-    cragList.map(item => {
-        if (item.area_name === area) {
-            resArr.push(item)
-        }})
+    componentDidMount(){
+        getCrag()
+        .then((res)=>{
+            this.setState({
+                cragData: res
+            })
+        })
+    }
 
-    return (
-        <div className="cragWrapper">
-            <h1>{resArr[0].area_name}</h1>
-            {resArr.map((item, i) => <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.name}`}>{item.name}</Link></p>)}
-        </div>
-    )
+    render(){
+        console.log(this.state)
+        const h1obj = this.state.cragData.find(item => item.area_name === this.state.area)
+        return (
+            <div className="cragWrapper">
+                <h1>{h1obj && h1obj.area_name}</h1>
+                {this.state.cragData && this.state.cragData.map((item, i) => this.state.area === item.area_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.name}`}>{item.name}</Link></p> : '')}
+            </div>
+        )
+    }
 }
 
 export default Crag
