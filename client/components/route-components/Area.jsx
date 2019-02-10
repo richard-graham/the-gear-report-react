@@ -51,7 +51,7 @@ class Area extends React.Component {
         return (
             <div className="areaWrapper">
                 <h1>Area!</h1>
-                {this.state.areaData && this.state.areaData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p> : '')}
+                {this.state.areaData && this.state.areaData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}/${item.region_name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }

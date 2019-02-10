@@ -46,12 +46,15 @@ class Region extends React.Component {
             })
         })
     }
-
+    
     render(){
+        console.log(this.state.regionData)
+        const h1obj = this.state.regionData.find(item => item.island_name === this.state.island)
+        console.log(h1obj)
         return (
             <div className="regionWrapper">
-                <h1>region!</h1>
-                {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.name}`}>{item.name}</Link></p> : '')}
+                <h1>{h1obj && h1obj.island_name}</h1>
+                {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.island_name}/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }
