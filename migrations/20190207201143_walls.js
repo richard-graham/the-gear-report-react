@@ -22,8 +22,10 @@ exports.up = function(knex, Promise) {
             .references('name')
             .inTable('crag')
             .index();
-        table.text('access');
+        table.text('access')
         table.text('img_url')
+        table.string('altitude')
+        table.string('walk_time')
     })
 };
 

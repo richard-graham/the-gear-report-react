@@ -7,7 +7,7 @@ class Region extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            regionData: [{id: 1, name: "North"}],
+            regionData: [],
             island: this.props.match.params.island
         }
     }

@@ -1,36 +1,52 @@
 import React from 'react'
 
-import routeData from '../../../data/06_routes'
+import {getClimb} from '../../api/climb_api'
 
-const routeList = Object.values(routeData)
+class Climb extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            climbData: [],
+            island: this.props.match.params.island,
+            region: this.props.match.params.region,
+            area: this.props.match.params.area,
+            crag: this.props.match.params.crag,
+            wall: this.props.match.params.wall,
+            climb: this.props.match.params.climb
+        }
+    }
 
-const Climb = ({match}) => {
-    const {climb} = match.params
-    const resArr = [];
-        
-    routeList.map(item => {
-        if (item.name === climb) {
-            resArr.push(item)
-        }})
-        
-    return (
-        <div className="routeWrapper">
-            <h1>{resArr[0].name}</h1>
-            
-            {resArr.map((item, i) => 
-            <div key={i}>
+    componentDidMount() {
+        getClimb() 
+        .then((res) => {
+            this.setState({
+                climbData: res
+            })
+        })
+    }
+
+    render() {
+        const h1obj = this.state.climbData.find(item => item.wall_name === this.state.wall)
+        const climbObj = this.state.climbData.find(item => item.name === this.state.climb)
+
+        return(
+            <div className="wallWrapper">
+                <h1>{h1obj && h1obj.name}</h1>
+                <br/>
                 <br />
-                <p>Grade: {item.grade}</p>
-                <p>Height: {item.length}</p>
-                <p>Bolts: {item.bolts}</p>
+                {this.state.climbData.length > 0 && <div>
+                <p>Grade: {climbObj.grade}</p>
+                <p>Height: {climbObj.length}</p>
+                <p>Bolts: {climbObj.bolts}</p>
                 <p><strong>Description</strong></p>
-                <p>{item.description}</p>
-                <p>First Ascent: {item.fa}</p>
+                <p>{climbObj.description}</p>
+                <p>First Ascent: {climbObj.fa}</p>
+                </div>}
             </div>
-            )}
-           
-        </div>
-    )
+        )
+    }
+    
 }
+
 
 export default Climb

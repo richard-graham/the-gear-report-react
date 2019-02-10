@@ -9,6 +9,7 @@ const regionDb = require('./db/regions')
 const areaDb = require('./db/areas')
 const cragDb = require('./db/crags')
 const wallDb = require('./db/walls')
+const climbDb = require('./db/climbs')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
@@ -53,6 +54,12 @@ server.get("/API/wall",(req,res)=>{
     })
 })
 
+server.get("/API/climb",(req, res)=>{
+    climbDb.getClimbs()
+    .then((dbResponse) => {
+        res.send(dbResponse)
+    })
+})
 
 module.exports = server
 

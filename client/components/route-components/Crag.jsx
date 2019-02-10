@@ -7,7 +7,7 @@ class Crag extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            cragData: [{id: 1, name: "North"}],
+            cragData: [],
             island: this.props.match.params.island,
             region: this.props.match.params.region,
             area: this.props.match.params.area
@@ -24,7 +24,6 @@ class Crag extends React.Component {
     }
 
     render(){
-        console.log(this.state)
         const h1obj = this.state.cragData.find(item => item.area_name === this.state.area)
         return (
             <div className="cragWrapper">

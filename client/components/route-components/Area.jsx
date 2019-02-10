@@ -14,7 +14,6 @@ class Area extends React.Component {
     }
 
     componentDidMount(){
-        console.log(getArea());
         getArea()
         .then((res)=>{
             this.setState({
@@ -24,7 +23,6 @@ class Area extends React.Component {
     }
 
     render(){
-        console.log(this.state)
         const h1obj = this.state.areaData.find(item => item.region_name === this.state.region)
         return (
             <div className="areaWrapper">

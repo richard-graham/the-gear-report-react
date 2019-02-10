@@ -32,7 +32,8 @@ exports.up = function(knex, Promise) {
         table.integer('quality');
         table.string('length');
         table.integer('bolts');
-        table.string('first-ascent')
+        table.string('fa')
+        table.string('description')
     })
 };
 
