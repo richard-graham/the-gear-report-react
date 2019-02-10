@@ -1,35 +1,36 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {getRegion} from '../../api/region_api'
+import {getArea} from '../../api/area_api'
 
-class Region extends React.Component {
+class Area extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            regionData: [],
-            island: this.props.match.params.island
+            areaData: [{id: 1, name: "North"}],
+            island: this.props.match.params.island,
+            region: this.props.match.params.region
         }
     }
 
     componentDidMount(){
-        getRegion()
+        getArea()
         .then((res)=>{
             this.setState({
-                regionData: res
+                areaData: res
             })
         })
     }
-    
+
     render(){
-        const h1obj = this.state.regionData.find(item => item.island_name === this.state.island)
+        const h1obj = this.state.areaData.find(item => item.region_name === this.state.region)
         return (
-            <div className="regionWrapper">
-                <h1>{h1obj && h1obj.island_name} Island</h1>
-                {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.island_name}/${item.name}`}>{item.name}</Link></p> : '')}
+            <div className="areaWrapper">
+                <h1>{h1obj && h1obj.region_name}</h1>
+                {this.state.areaData && this.state.areaData.map((item, i) => this.state.region === item.region_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }
 }
 
-export default Region
+export default Area

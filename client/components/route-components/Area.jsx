@@ -1,36 +1,37 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {getArea} from '../../api/area_api'
+import {getCrag} from '../../api/crag_api'
 
-class Area extends React.Component {
+class Crag extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            areaData: [{id: 1, name: "North"}],
+            cragData: [],
             island: this.props.match.params.island,
-            region: this.props.match.params.region
+            region: this.props.match.params.region,
+            area: this.props.match.params.area
         }
     }
 
     componentDidMount(){
-        getArea()
+        getCrag()
         .then((res)=>{
             this.setState({
-                areaData: res
+                cragData: res
             })
         })
     }
 
     render(){
-        const h1obj = this.state.areaData.find(item => item.region_name === this.state.region)
+        const h1obj = this.state.cragData.find(item => item.area_name === this.state.area)
         return (
-            <div className="areaWrapper">
-                <h1>{h1obj && h1obj.region_name}</h1>
-                {this.state.areaData && this.state.areaData.map((item, i) => this.state.region === item.region_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.name}`}>{item.name}</Link></p> : '')}
+            <div className="cragWrapper">
+                <h1>{h1obj && h1obj.area_name}</h1>
+                {this.state.cragData && this.state.cragData.map((item, i) => this.state.area === item.area_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }
 }
 
-export default Area
+export default Crag

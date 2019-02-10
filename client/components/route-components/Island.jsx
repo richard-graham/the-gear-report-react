@@ -1,33 +1,35 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {getIsland} from '../../api/island_api'
+import {getRegion} from '../../api/region_api'
 
-class Island extends React.Component {
+class Region extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            islandData: []
+            regionData: [],
+            island: this.props.match.params.island
         }
     }
 
     componentDidMount(){
-        getIsland()
+        getRegion()
         .then((res)=>{
             this.setState({
-                islandData: res
+                regionData: res
             })
         })
     }
-
+    
     render(){
+        const h1obj = this.state.regionData.find(item => item.island_name === this.state.island)
         return (
-            <div className="islandWrapper">
-                <h1>New Zealand</h1>
-                {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name} Island</Link></p>)}
+            <div className="regionWrapper">
+                <h1>{h1obj && h1obj.island_name} Island</h1>
+                {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.island_name}/${item.name}`}>{item.name}</Link></p> : '')}
             </div>
         )
     }
 }
 
-export default Island
+export default Region
