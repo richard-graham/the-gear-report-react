@@ -28,7 +28,7 @@ class Climb extends React.Component {
     render() {
         const h1obj = this.state.climbData.find(item => item.wall_name === this.state.wall)
         const climbObj = this.state.climbData.find(item => item.name === this.state.climb)
-
+        console.log(this.props.match.params)
         return(
             <div className="wallWrapper">
                 <h1>{h1obj && h1obj.name}</h1>
