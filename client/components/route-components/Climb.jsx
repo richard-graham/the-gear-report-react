@@ -2,6 +2,8 @@ import React from 'react'
 
 import {getClimb} from '../../api/climb_api'
 
+import Ticket from './Ticket'
+
 class Climb extends React.Component {
     constructor(props) {
         super(props)
@@ -28,7 +30,6 @@ class Climb extends React.Component {
     render() {
         const h1obj = this.state.climbData.find(item => item.wall_name === this.state.wall)
         const climbObj = this.state.climbData.find(item => item.name === this.state.climb)
-        console.log(this.props.match.params)
         return(
             <div className="wallWrapper">
                 <h1>{h1obj && h1obj.name}</h1>
@@ -42,6 +43,7 @@ class Climb extends React.Component {
                 <p>{climbObj.description}</p>
                 <p>First Ascent: {climbObj.fa}</p>
                 </div>}
+                <Ticket className="ticket" propsData={this.props}/>
             </div>
         )
     }

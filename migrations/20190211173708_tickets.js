@@ -35,6 +35,9 @@ exports.up = function(knex, Promise) {
             .references('name')
             .inTable('routes')
             .index();
+        table.boolean('has_grant')
+            .defaultTo(false)
+        table.timestamps(true, true)
     })
 };
 

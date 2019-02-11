@@ -9,11 +9,12 @@ import Crag from './route-components/Crag'
 import Wall from './route-components/Wall'
 import Climb from './route-components/Climb'
 
+
 const App = () => {
   return (
     <Router>
       <div>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Home}/>
         <Route exact path='/:island' component={Island}/>
         <Route exact path='/:island/:region' component={Region}/>
         <Route exact path='/:island/:region/:area' component={Area}/>

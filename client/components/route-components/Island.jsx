@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Ticket from './Ticket'
+
 
 import {getRegion} from '../../api/region_api'
 
@@ -27,7 +29,9 @@ class Region extends React.Component {
             <div className="regionWrapper">
                 <h1>{h1obj && h1obj.island_name} Island</h1>
                 {this.state.regionData && this.state.regionData.map((item, i) => this.state.island === item.island_name ? <p key={i}><Link to={`/${item.island_name}/${item.name}`}>{item.name}</Link></p> : '')}
+                <Ticket className="ticket" propsData={this.props}/>
             </div>
+            
         )
     }
 }

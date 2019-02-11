@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Ticket from './Ticket'
 
 import {getCrag} from '../../api/crag_api'
 
@@ -29,6 +30,7 @@ class Crag extends React.Component {
             <div className="cragWrapper">
                 <h1>{h1obj && h1obj.area_name}</h1>
                 {this.state.cragData && this.state.cragData.map((item, i) => this.state.area === item.area_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.name}`}>{item.name}</Link></p> : '')}
+                <Ticket className="ticket" propsData={this.props}/>
             </div>
         )
     }

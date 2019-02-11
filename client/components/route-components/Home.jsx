@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 
 import {getIsland} from '../../api/island_api'
 
+import Ticket from './Ticket'
+
 class Island extends React.Component {
     constructor(props){
         super(props)
@@ -25,6 +27,7 @@ class Island extends React.Component {
             <div className="islandWrapper">
                 <h1>New Zealand</h1>
                 {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name} Island</Link></p>)}
+                <Ticket className="ticket" propsData={this.props}/>
             </div>
         )
     }

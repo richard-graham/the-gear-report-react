@@ -10,6 +10,7 @@ const areaDb = require('./db/areas')
 const cragDb = require('./db/crags')
 const wallDb = require('./db/walls')
 const climbDb = require('./db/climbs')
+const ticketDb = require('./db/tickets')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
@@ -56,6 +57,13 @@ server.get("/API/wall",(req,res)=>{
 
 server.get("/API/climb",(req, res)=>{
     climbDb.getClimbs()
+    .then((dbResponse) => {
+        res.send(dbResponse)
+    })
+})
+
+server.get("/API/ticket",(req, res)=>{
+    ticketDb.getTickets()
     .then((dbResponse) => {
         res.send(dbResponse)
     })

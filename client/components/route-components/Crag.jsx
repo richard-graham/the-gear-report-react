@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import {getCrag} from '../../api/crag_api'
 import {getWall} from '../../api/wall_api'
 
+import Ticket from './Ticket'
+
 class Wall extends React.Component {
     constructor(props) {
         super(props)
@@ -35,8 +37,6 @@ class Wall extends React.Component {
     render() {
         const h1obj = this.state.wallData.find(item => item.crag_name === this.state.crag)
         const cragObj = this.state.cragData.find(item => item.name === this.state.crag)
-        console.log(this.state.crag)
-        console.log(this.state.wallData)
         return(
             <div className="wallWrapper">
                 <h1>{h1obj && h1obj.crag_name}</h1>
@@ -49,6 +49,7 @@ class Wall extends React.Component {
                 <br />
                 <p><strong>Walls</strong></p>
                 {this.state.wallData.length > 0 && this.state.wallData.map((item, i) => item.crag_name === this.state.crag ? <h4 key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.name}`}>{item.name}</Link></h4> : '')}
+                <Ticket className="ticket" propsData={this.props}/>
             </div>
         )
     }

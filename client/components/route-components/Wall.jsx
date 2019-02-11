@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import {getClimb} from '../../api/climb_api'
 import {getWall} from '../../api/wall_api'
 
+import Ticket from './Ticket'
+
 class Route extends React.Component {
     constructor(props) {
         super(props)
@@ -36,7 +38,6 @@ class Route extends React.Component {
     render() {
         const h1obj = this.state.climbData.find(item => item.wall_name === this.state.wall)
         const wallObj = this.state.wallData.find(item => item.name === this.state.wall)
-        console.log(this.state)
         return (
             <div className="climbWrapper">
                 <h1>{h1obj && h1obj.wall_name}</h1>
@@ -55,6 +56,7 @@ class Route extends React.Component {
                         <li>Bolts: {item.bolts}</li>
                     </ul>
                 </div> : '')}
+                <Ticket className="ticket" propsData={this.props}/>
                 </div>}
             </div>
         )
