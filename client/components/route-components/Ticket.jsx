@@ -61,7 +61,7 @@ class Ticket extends React.Component {
                 <h4>Tickets at this Wall</h4>
                 <ul>
                     {this.state.ticketData.map((ticket, i) => 
-                        ticket.wall_name === this.state.locationData.wall ? <li key={i}>{ticket.title}</li> : '')}
+                        ticket.wall_name === this.state.locationData.wall ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
             </div>
         } else if (this.state.locationData.climb) {
@@ -73,7 +73,7 @@ class Ticket extends React.Component {
                 <h4>Tickets at this Route</h4>
                 <ul>
                     {this.state.ticketData.map((ticket, i) => 
-                        ticket.route_name === this.state.locationData.climb ? <li key={i}>{ticket.title}</li> : '')}
+                        ticket.route_name === this.state.locationData.climb ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
                 </div>
                 : ''}
