@@ -27,11 +27,16 @@ class DisplayTicket extends React.Component {
                 {ticket && 
                 <div>
                     <h1>{ticket.title}</h1>
-                    <p>-{ticket.region_name}</p>
-                    <p>-{ticket.area_name}</p>
-                    <p>-{ticket.crag_name}</p>
-                    <p>-{ticket.wall_name}</p>
-                    <p>-{ticket.route_name}</p>
+                    <br/>
+                    {ticket.region_name && <p>Region: {ticket.region_name}</p>}
+                    {ticket.area_name && <p>Area: {ticket.area_name}</p>}
+                    {ticket.crag_name && <p>Crag: {ticket.crag_name}</p>}
+                    {ticket.wall_name && <p>Wall: {ticket.wall_name}</p>}
+                    {ticket.route_name && <p>Route: {ticket.route_name}</p>}
+                    <br/>
+                    <p>Description: {ticket.description}</p>
+                    <p>Severity: {ticket.severity}</p>
+                    <p>Date Created: {ticket.created_at}</p>
                 </div>
                 }
             </div>

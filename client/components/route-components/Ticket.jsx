@@ -52,7 +52,7 @@ class Ticket extends React.Component {
                 <h4>Tickets at this Crag</h4>
                 <ul>
                     {this.state.ticketData.map((ticket, i) => 
-                        ticket.crag_name === this.state.locationData.crag ? <li key={i}>{ticket.title}</li> : '')}
+                        ticket.crag_name === this.state.locationData.crag ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
             </div>
         } else if (this.state.locationData.wall && !this.state.locationData.climb) {
