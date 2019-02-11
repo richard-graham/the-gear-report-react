@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {getTicket} from '../../api/ticket_api'
+import {Link} from 'react-router-dom'
 
 class Ticket extends React.Component {
     constructor(props) {
@@ -29,10 +30,21 @@ class Ticket extends React.Component {
             display = 
             <div>
                 <h4>Recent Tickets</h4>
-                <ul>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Title</th>
+                        <th>Crag</th>
+                        <th>Date Added</th>
+                    </tr>
                     {this.state.ticketData.map((ticket, i) => i < 5 ? 
-                    <li key={i}>{ticket.title} {ticket.crag_name} {ticket.created_at}</li> : '')}
-                </ul>
+                    <tr key={i}> 
+                        <td><Link to={`/tickets/${ticket.id}`}>{ticket.title}</Link></td> 
+                        <td>{ticket.crag_name}</td> 
+                        <td>{ticket.created_at}</td>
+                    </tr> : '')}
+                    </tbody>
+                </table>
             </div>
         } else if (this.state.locationData.crag && !this.state.locationData.wall) {
             display = 
