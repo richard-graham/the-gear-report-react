@@ -1,5 +1,6 @@
 import React from 'react'
 import {getTicket} from '../../api/ticket_api'
+import {Link} from 'react-router-dom'
 
 class DisplayTicket extends React.Component {
     constructor(props) {
@@ -37,6 +38,10 @@ class DisplayTicket extends React.Component {
                     <p>Description: {ticket.description}</p>
                     <p>Severity: {ticket.severity}</p>
                     <p>Date Created: {ticket.created_at}</p>
+                    <br/>
+                    <div className="addTicket">
+                        <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                    </div>
                 </div>
                 }
             </div>

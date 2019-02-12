@@ -43,6 +43,9 @@ class Ticket extends React.Component {
                     </tr> : '')}
                     </tbody>
                 </table>
+                <div className="addTicket">
+                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                </div>
             </div>
         } else if (this.state.locationData.crag && !this.state.locationData.wall) {
             display = 
@@ -52,6 +55,9 @@ class Ticket extends React.Component {
                     {this.state.ticketData.map((ticket, i) => 
                         ticket.crag_name === this.state.locationData.crag ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
+                <div className="addTicket">
+                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                </div>
             </div>
         } else if (this.state.locationData.wall && !this.state.locationData.climb) {
             display = 
@@ -61,6 +67,9 @@ class Ticket extends React.Component {
                     {this.state.ticketData.map((ticket, i) => 
                         ticket.wall_name === this.state.locationData.wall ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
+                <div className="addTicket">
+                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                </div>
             </div>
         } else if (this.state.locationData.climb) {
             let isTrue = this.state.ticketData.find(ticket => ticket.route_name === this.state.locationData.climb)
@@ -68,11 +77,14 @@ class Ticket extends React.Component {
             <div> 
                 {isTrue ? 
                 <div>
-                <h4>Tickets at this Route</h4>
-                <ul>
-                    {this.state.ticketData.map((ticket, i) => 
-                        ticket.route_name === this.state.locationData.climb ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
-                </ul>
+                    <h4>Tickets at this Route</h4>
+                    <ul>
+                        {this.state.ticketData.map((ticket, i) => 
+                            ticket.route_name === this.state.locationData.climb ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
+                    </ul>
+                    <div className="addTicket">
+                        <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                    </div>
                 </div>
                 : ''}
         
