@@ -5,7 +5,5 @@ export function getWall() {
         .then(res => {
             return res.body
         })
-        .then((body)=>{
-            return body
-        })
+        
 }

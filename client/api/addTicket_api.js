@@ -1,7 +1,7 @@
 import request from 'superagent'
 
 export function addTicket(ticket) {
-    return request.post('/API/add/ticket')
+    return request.post('/API/ticket/add')
         .send(ticket)
         .then(res => {
             return res.body

@@ -23,8 +23,6 @@ class Ticket extends React.Component {
 
     render() {
         this.state.locationData = this.props.propsData.match.params
-        console.log('locationData', this.state.locationData)
-        console.log('ticketData', this.state.ticketData)
         let display = null;
         if (!this.state.locationData.island) {
             display = 

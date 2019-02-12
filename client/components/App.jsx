@@ -9,6 +9,7 @@ import Crag from './route-components/Crag'
 import Wall from './route-components/Wall'
 import Climb from './route-components/Climb'
 import DisplayTicket from './route-components/DisplayTicket'
+import AddTicket from './route-components/AddTicket'
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path='/:island/:region/:area/:crag/:wall' component={Wall}/>
         <Route exact path='/:island/:region/:area/:crag/:wall/:climb' component={Climb}/>
         <Route exact path='/tickets/:id' component={DisplayTicket} />
+        <Route exact path='/tickets/add/ticket' component={AddTicket} />
       </div>
     </Router>
   )

@@ -69,6 +69,13 @@ server.get("/API/ticket",(req, res)=>{
     })
 })
 
+server.post("/API/ticket/add",(req, res)=>{
+    ticketDb.getTickets()
+    .then((dbResponse) => {
+        res.send(dbResponse)
+    })
+})
+
 module.exports = server
 
 
