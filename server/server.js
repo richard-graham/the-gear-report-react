@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-
+const bodyParser = require('body-parser')
 
 const server = express()
 
@@ -14,6 +14,7 @@ const ticketDb = require('./db/tickets')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
+server.use(bodyParser.json())
 
 
 server.get("/API/island",(req,res)=>{
@@ -70,7 +71,8 @@ server.get("/API/ticket",(req, res)=>{
 })
 
 server.post("/API/ticket/add",(req, res)=>{
-    ticketDb.getTickets()
+    console.log(req.body)
+    ticketDb.addTicket(req.body)
     .then((dbResponse) => {
         res.send(dbResponse)
     })

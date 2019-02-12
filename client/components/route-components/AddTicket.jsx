@@ -1,5 +1,5 @@
 import React from 'react'
-import {getTicket} from '../../api/addTicket_api'
+import {addTicket} from '../../api/addTicket_api'
 import request from 'superagent'
 
 class AddTicket extends React.Component {
@@ -49,10 +49,8 @@ class AddTicket extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        fetch('/API/ticket/add', {
-            method: 'POST',
-            body: this.state
-          });
+        console.log('submitted', this.state)
+        addTicket(this.state)
     }
 
     render() {

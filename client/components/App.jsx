@@ -24,7 +24,7 @@ const App = () => {
         <Route exact path='/:island/:region/:area/:crag/:wall' component={Wall}/>
         <Route exact path='/:island/:region/:area/:crag/:wall/:climb' component={Climb}/>
         <Route exact path='/tickets/:id' component={DisplayTicket} />
-        <Route exact path='/tickets/add/ticket' component={AddTicket} />
+        <Route exact path='/tickets/add' component={AddTicket} /> 
       </div>
     </Router>
   )

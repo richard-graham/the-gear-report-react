@@ -6,6 +6,12 @@ function getTickets() {
     return db('tickets').select().orderBy('created_at', 'desc')
 }
 
+function addTicket(ticket) {
+    console.log(ticket)
+    return db('tickets').insert(ticket)
+}
+
 module.exports = {
-    getTickets
+    getTickets,
+    addTicket
 }
