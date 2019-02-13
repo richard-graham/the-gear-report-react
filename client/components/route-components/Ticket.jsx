@@ -27,9 +27,9 @@ class Ticket extends React.Component {
         if (!this.state.locationData.island) {
             display = 
             <div>
-                <h4>Recent Tickets</h4>
-                <table>
-                    <tbody>
+                <h4 className='tableHeader'>Recent Tickets</h4>
+                <table className='table'>
+                    <tbody className='tbody'>
                     <tr>
                         <th>Title</th>
                         <th>Crag</th>
@@ -91,7 +91,7 @@ class Ticket extends React.Component {
             </div>
         }
         return (
-            <div>
+            <div className='homeTicket'>
                 {display}
             </div>
         )

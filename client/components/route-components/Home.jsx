@@ -24,10 +24,12 @@ class Island extends React.Component {
 
     render(){
         return (
-            <div className="islandWrapper">
-                <h1>New Zealand</h1>
-                {this.state.islandData && this.state.islandData.map((item, i) => <p key={i}><Link to={`/${item.name}`}>{item.name} Island</Link></p>)}
-                <Ticket className="ticket" propsData={this.props}/>
+            <div className="homeWrapper">
+                <h1 className='h1header'>The Gear Report</h1>
+                <h2 className='h2header'>Making Climbing Safer For Everyone</h2>
+                <h3 className='h3header'>New Zealand</h3>
+                {this.state.islandData && this.state.islandData.map((item, i) => <button className={`island${i}`} key={i}><Link to={`/${item.name}`}>{item.name} Island</Link></button>)}
+                <Ticket propsData={this.props}/>
             </div>
         )
     }

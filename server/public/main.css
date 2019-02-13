@@ -1,0 +1,155 @@
+#app {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100vw;
+    height: auto;
+    background-color: rgb(195, 217, 240);
+}
+
+.homeWrapper {
+    grid-column: 3 / 9;
+    background-color: rgb(242, 245, 247);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 20px, 20px, 20px, auto, 10%, auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.islandWrapper {
+    grid-column: 3 / 9;
+    background-color: rgb(242, 245, 247);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 20px, 20px, 20px, auto, 10%, auto;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+}
+
+.islandWrapper h1{
+    font-size: 3rem;
+    margin: 0;
+    color: #687864;
+    grid-column: 1 / 10;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+}
+
+.islandWrapper .button0 {
+    grid-column: 5 / 8;
+    grid-row: 2 / 3;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.islandWrapper .button1 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.islandWrapper .regionbutton0 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.islandWrapper .regionbutton1 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.h1header {
+    font-size: 3rem;
+    margin: 0;
+    color: #687864;
+    grid-column: 1 / 10;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+}
+
+.h2header {
+    font-size: 1.5rem;
+    color: #687864;
+    grid-column: 1 / 10;
+    grid-row: 2 / 3;
+    float: top;
+    margin: 0; 
+    justify-self: center;
+}
+
+.h3header {
+    font-size: 2rem;
+    color: #687864;
+    grid-column: 1 / 10;
+    grid-row: 3 / 4;
+    justify-self: center;
+    margin: 0;
+}
+
+.island0 {
+    grid-column: 3 / 5;
+    grid-row: 4 / 5;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.island1 {
+    grid-column: 6 / 8;
+    grid-row: 4 / 5;
+    justify-self: top;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.homeTicket {
+    grid-column: 2 / 9;
+    grid-row: 5 / 6;
+}
+
+.table {
+    width: 100%
+}
+
+.table th {
+    height: 40px;
+}
+
+.table tr {
+    text-align: center;
+}
+
+.cragWrapper {
+    grid-column: 3 / 9;
+    background-color: rgb(242, 245, 247);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 40px, 120px, 400px;
+    width: 100%;
+    height: 100vh;
+    /* justify-items: center; */
+}
+
+.text {
+    grid-column: 2 / 9;
+    grid-row:2 / 3;
+    /* height: 1000px; */
+}
+
+.walls {
+    grid-column: 2 / 9;
+    grid-row:3 / 4;
+    /* height: 150px; */
+}

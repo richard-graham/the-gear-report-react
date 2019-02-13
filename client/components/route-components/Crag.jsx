@@ -38,18 +38,23 @@ class Wall extends React.Component {
         const h1obj = this.state.wallData.find(item => item.crag_name === this.state.crag)
         const cragObj = this.state.cragData.find(item => item.name === this.state.crag)
         return(
-            <div className="wallWrapper">
-                <h1>{h1obj && h1obj.crag_name}</h1>
+            <div className="cragWrapper">
+                <h1 className="h1header">{h1obj && h1obj.crag_name}</h1>
                 <br/>
+                <div className='text'>
                 <p><strong>Introduction</strong></p>
                 <p>{this.state.cragData.length > 0 && cragObj.introduction}</p>
                 <p>Gear: {this.state.cragData.length > 0 && cragObj.gear}</p>
                 <p>Access: {this.state.cragData.length > 0 && cragObj.access}</p>
                 <p>Accommodation: {this.state.cragData.length > 0 && cragObj.accommodation}</p>
-                <br />
+                </div>
+                <div className='walls'>
                 <p><strong>Walls</strong></p>
                 {this.state.wallData.length > 0 && this.state.wallData.map((item, i) => item.crag_name === this.state.crag ? <h4 key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.area_name}/${item.crag_name}/${item.name}`}>{item.name}</Link></h4> : '')}
+                
                 <Ticket className="ticket" propsData={this.props}/>
+                </div>
+                
             </div>
         )
     }

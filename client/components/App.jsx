@@ -16,7 +16,7 @@ import AddTicket from './route-components/AddTicket'
 const App = () => {
   return (
     <Router>
-      <div>
+      <React.Fragment>
         <Route path='/' component={Header} />
         <Route exact path='/' component={Home}/>
         <Route exact path='/:island' component={Island}/>
@@ -27,7 +27,7 @@ const App = () => {
         <Route exact path='/:island/:region/:area/:crag/:wall/:climb' component={Climb}/>
         <Route exact path='/tickets/:id' component={DisplayTicket} />
         <Route exact path='/tickets/add/ticket' component={AddTicket} /> 
-      </div>
+      </React.Fragment>
     </Router>
   )
 }

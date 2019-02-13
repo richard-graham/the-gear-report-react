@@ -26,9 +26,9 @@ class Area extends React.Component {
     render(){
         const h1obj = this.state.areaData.find(item => item.region_name === this.state.region)
         return (
-            <div className="areaWrapper">
+            <div className="islandWrapper">
                 <h1>{h1obj && h1obj.region_name}</h1>
-                {this.state.areaData && this.state.areaData.map((item, i) => this.state.region === item.region_name ? <p key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.name}`}>{item.name}</Link></p> : '')}
+                {this.state.areaData && this.state.areaData.map((item, i) => this.state.region === item.region_name ? <button className={`regionbutton${i}`} key={i}><Link to={`/${item.island_name}/${item.region_name}/${item.name}`}>{item.name}</Link></button> : '')}
                 <Ticket className="ticket" propsData={this.props}/>
             </div>
         )
