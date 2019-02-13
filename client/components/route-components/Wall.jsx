@@ -39,7 +39,7 @@ class Route extends React.Component {
         const h1obj = this.state.climbData.find(item => item.wall_name === this.state.wall)
         const wallObj = this.state.wallData.find(item => item.name === this.state.wall)
         return (
-            <div className="cragWrapper">
+            <div className="wallWrapper">
                 <h1 className="h1header">{h1obj && h1obj.wall_name}</h1>
                 <br/>
                 {this.state.wallData.length > 0 && 

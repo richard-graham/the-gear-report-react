@@ -136,20 +136,44 @@
     background-color: rgb(242, 245, 247);
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 40px, 120px, 400px;
+    grid-template-rows: 30px, 1fr, 1fr;
     width: 100%;
     height: 100vh;
-    /* justify-items: center; */
+    /* align-items: center; */
 }
 
 .text {
     grid-column: 2 / 9;
     grid-row:2 / 3;
-    /* height: 1000px; */
+    align-content: top;
+    height: 200px;
 }
 
 .walls {
     grid-column: 2 / 9;
     grid-row:3 / 4;
     /* height: 150px; */
+}
+
+.wallWrapper {
+    grid-column: 3 / 9;
+    background-color: rgb(242, 245, 247);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 20px, auto, auto, auto;
+    width: 100%;
+}
+
+.ticketwrapper {
+    grid-column: 3 / 9;
+    background-color: rgb(242, 245, 247);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 20px, auto, auto, auto;
+    width: 100%;
+}
+
+.ticket .dispticket {
+    grid-column: 2 / 9;
+    grid-row:3 / 4;
 }

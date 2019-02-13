@@ -25,9 +25,9 @@ class DisplayTicket extends React.Component {
         // this.state.ticketId = this.props.match.params.id
         let ticket = this.state.ticketData.find(item => item.id == this.state.ticketId)
         return (
-            <div>
+            <div className='dispticket'>
                 {ticket && 
-                <div>
+                <div className='hey'>
                     <h1>{ticket.title}</h1>
                     <br/>
                     {ticket.region_name && <p>Region: {ticket.region_name}</p>}
