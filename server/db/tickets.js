@@ -11,7 +11,13 @@ function addTicket(ticket) {
     return db('tickets').insert(ticket)
 }
 
+function updateTicket(ticket) {
+    console.log(ticket)
+    return db('tickets').update(ticket).where({id: ticket.id})
+}
+
 module.exports = {
     getTickets,
-    addTicket
+    addTicket,
+    updateTicket
 }

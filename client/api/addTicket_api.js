@@ -8,3 +8,12 @@ export function addTicket(ticket) {
            console.log('NO WAY', res) 
          })
 }
+
+export function updateTicket(ticket) {
+  console.log('update', ticket.id)
+    return request.put('/API/ticket/update')
+        .send(ticket)
+        .then(res => {
+           console.log('NO WAY', res) 
+         })
+}

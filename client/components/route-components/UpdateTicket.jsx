@@ -1,21 +1,12 @@
 import React from 'react'
-import {addTicket} from '../../api/addTicket_api'
+import {updateTicket} from '../../api/addTicket_api'
 
-class AddTicket extends React.Component {
+class UpdateTicket extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            title: '',
-            description: '',
-            severity: '',
-            island_name: '',
-            region_name: '',
-            area_name: '',
-            crag_name: '',
-            wall_name: '',
-            route_name: '' 
-        }
+        this.state = this.props.newState
+        
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -24,15 +15,17 @@ class AddTicket extends React.Component {
         let newState = {}
         newState[e.target.name] = e.target.value
         this.setState(newState)
+        console.log('submitted', this.state)
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log('submitted', this.state)
-        addTicket(this.state)
+        
+        updateTicket(this.state)
     }
 
     render() {
+        console.log(this.state)
         return (
         <form onSubmit={this.handleSubmit}>
             <label htmlFor="title">Title</label>
@@ -68,4 +61,4 @@ class AddTicket extends React.Component {
     }
 }
 
-export default AddTicket
+export default UpdateTicket

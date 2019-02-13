@@ -78,6 +78,14 @@ server.post("/API/ticket/add",(req, res)=>{
     })
 })
 
+server.put("/API/ticket/update",(req, res)=>{
+    console.log(req.body)
+    ticketDb.updateTicket(req.body)
+    .then((dbResponse) => {
+        res.json(dbResponse)
+    })
+})
+
 module.exports = server
 
 

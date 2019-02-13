@@ -44,7 +44,7 @@ class Ticket extends React.Component {
                     </tbody>
                 </table>
                 <div className="addTicket">
-                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                    <p><Link to={`/tickets/add/ticket`}>Add a ticket</Link></p>
                 </div>
             </div>
         } else if (this.state.locationData.crag && !this.state.locationData.wall) {
@@ -56,7 +56,7 @@ class Ticket extends React.Component {
                         ticket.crag_name === this.state.locationData.crag ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
                 <div className="addTicket">
-                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                    <p><Link to={`/tickets/add/ticket`}>Add a ticket</Link></p>
                 </div>
             </div>
         } else if (this.state.locationData.wall && !this.state.locationData.climb) {
@@ -68,7 +68,7 @@ class Ticket extends React.Component {
                         ticket.wall_name === this.state.locationData.wall ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                 </ul>
                 <div className="addTicket">
-                    <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                    <p><Link to={`/tickets/add/ticket`}>Add a ticket</Link></p>
                 </div>
             </div>
         } else if (this.state.locationData.climb) {
@@ -83,7 +83,7 @@ class Ticket extends React.Component {
                             ticket.route_name === this.state.locationData.climb ? <Link to={`/tickets/${ticket.id}`} key={i}><li>{ticket.title}</li></Link> : '')}
                     </ul>
                     <div className="addTicket">
-                        <p><Link to={`/tickets/add`}>Add a ticket</Link></p>
+                        <p><Link to={`/tickets/add/ticket`}>Add a ticket</Link></p>
                     </div>
                 </div>
                 : ''}
